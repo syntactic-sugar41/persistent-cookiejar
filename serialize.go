@@ -116,7 +116,7 @@ func (j *Jar) mergeFrom(r io.Reader) error {
 		log.Printf("warning: discarding cookies in invalid format (error: %v)", err)
 		return nil
 	}
-	j.merge(entries)
+	//j.merge(entries)
 	return nil
 }
 
