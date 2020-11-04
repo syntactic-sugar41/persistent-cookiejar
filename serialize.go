@@ -6,6 +6,7 @@ package cookiejar
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -125,6 +126,7 @@ func (j *Jar) mergeFrom(r io.Reader) error {
 func (j *Jar) writeTo(w io.Writer) error {
 	encoder := json.NewEncoder(w)
 	entries := j.allPersistentEntries()
+	fmt.Printf("%+v\n", entries)
 	if err := encoder.Encode(entries); err != nil {
 		return err
 	}
